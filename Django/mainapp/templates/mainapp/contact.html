@@ -1,5 +1,5 @@
 {% extends 'mainapp/base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block menu %}   
     <div class="hero">
@@ -10,7 +10,7 @@
 			<a href="#" class="basket"></a>
 		</div>
 		<h1>наши контакты</h1>
-        <p>сегодня: {{ visit_date|date:"l, j F, Y, H:i" }} (GMT{{ visit_date|date:"O" }})</p>
+        <p>сегодня: {% now "j E Y H:i" %}</p>
 	</div>
 {% endblock %}
 
