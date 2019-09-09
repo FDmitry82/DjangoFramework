@@ -44,6 +44,8 @@ class ShopUserEditForm(UserChangeForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
+            if field_name == 'password':
+                field.widget = forms.HiddenInput()
 
     def clean_age(self):
         data = self.cleaned_data['age']
